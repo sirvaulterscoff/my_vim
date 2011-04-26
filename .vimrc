@@ -18,6 +18,7 @@ Bundle 'corntrace/bufexplorer'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'gotcha/vimpdb'
+Bundle 'vim-scripts/indexer.tar.gz'
 filetype plugin indent on
 syntax on
 set hlsearch
@@ -77,3 +78,7 @@ map <c-T> <Plug>TaskList
 map <buffer> <s-F9> :w<CR>:!/usr/bin/env python % <CR>
 set showtabline=2
 nmap ,t :tabnew<CR>
+let ropevim_vim_completion=1
+let g:ropevim_autoimport_modules = ["os","random"]
+
+
