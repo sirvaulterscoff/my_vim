@@ -1,0 +1,8 @@
+My config for vim.
+
+To use:
+    1. put vim.rc in home folder
+    2. issue foloowing command
+git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git
+    3. Open vim
+    4. in vim type :BundleInstall
