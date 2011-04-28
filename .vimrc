@@ -74,11 +74,18 @@ set laststatus=2
 let Tlist_Process_File_Always=1
 set showtabline=2
 
-map <c-T> <Plug>TaskList
-map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
+nmap ,T <Plug>TaskList
+nmap ,c :tabclose<CR>
 nmap ,t :tabnew<CR>
+map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-nmap <F3> :BufExplorer<CR>
+nmap <F3> :FufBuffer<CR>
 nnoremap <silent> <F4> :TlistToggle<CR>
 map <C-A-Right> :tabnext<CR>
 map <C-A-Left>  :tabprev<CR>
+map <C-n> :FufCoverageFile<CR>
+map <C-l> :FufChangeList<CR>
+let g:fuf_keyOpenTabpage='t'
+let g:fuf_keyOpenSplit='s'
+let g:fuf_keyOpenVsplit='v'
+let g:EasyMotion_leader_key = '<Leader>m'
