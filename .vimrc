@@ -33,7 +33,8 @@ set showmode
 set showcmd " show partial commands in status line and
 set showmatch
 "set expandtab
-set textwidth=79
+set textwidth=0
+set nowrap
 set tabstop=8
 set softtabstop=4
 set shiftwidth=4
@@ -46,12 +47,10 @@ set statusline+=\ [%{getcwd()}] " current dir
 set statusline+=%([%{Tlist_Get_Tagname_By_Line()}]%)
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
-map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.git', '\.hg', '\.svn', '\.bzr']
-nmap <F3> :BufExplorer<CR>
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -71,14 +70,15 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Use_SingleClick = 1
 
 let g:ctags_statusline=1
-nnoremap <silent> <F4> :TlistToggle<CR>
 set laststatus=2
 let Tlist_Process_File_Always=1
-map <c-T> <Plug>TaskList
-map <buffer> <s-F9> :w<CR>:!/usr/bin/env python % <CR>
 set showtabline=2
+
+map <c-T> <Plug>TaskList
+map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 nmap ,t :tabnew<CR>
-let ropevim_vim_completion=1
-let g:ropevim_autoimport_modules = ["os","random"]
-
-
+map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+nmap <F3> :BufExplorer<CR>
+nnoremap <silent> <F4> :TlistToggle<CR>
+map <C-A-Right> :tabnext<CR>
+map <C-A-Left>  :tabprev<CR>
