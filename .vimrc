@@ -15,10 +15,11 @@ Bundle 'FuzzyFinder'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'corntrace/bufexplorer'
-Bundle 'vim-scripts/taglist.vim'
+"Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/TaskList.vim'
 Bundle 'gotcha/vimpdb'
 Bundle 'vim-scripts/indexer.tar.gz'
+Bundle 'majutsushi/tagbar'
 filetype plugin indent on
 syntax on
 set hlsearch
@@ -80,7 +81,7 @@ nmap ,t :tabnew<CR>
 map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nmap <F3> :FufBuffer<CR>
-nnoremap <silent> <F4> :TlistToggle<CR>
+nnoremap <silent> <F4> :TagbarOpenAutoClose<CR>
 map <C-A-Right> :tabnext<CR>
 map <C-A-Left>  :tabprev<CR>
 map <C-n> :FufCoverageFile<CR>
@@ -88,4 +89,3 @@ map <C-l> :FufChangeList<CR>
 let g:fuf_keyOpenTabpage='t'
 let g:fuf_keyOpenSplit='s'
 let g:fuf_keyOpenVsplit='v'
-let g:EasyMotion_leader_key = '<Leader>m'
