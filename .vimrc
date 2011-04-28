@@ -86,6 +86,6 @@ map <C-A-Right> :tabnext<CR>
 map <C-A-Left>  :tabprev<CR>
 map <C-n> :FufCoverageFile<CR>
 map <C-l> :FufChangeList<CR>
-let g:fuf_keyOpenTabpage='t'
-let g:fuf_keyOpenSplit='s'
-let g:fuf_keyOpenVsplit='v'
+let g:fuf_keyOpenTabpage='T'
+let g:fuf_keyOpenSplit='S'
+let g:fuf_keyOpenVsplit='V'
