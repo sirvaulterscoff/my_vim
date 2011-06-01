@@ -10,3 +10,5 @@ To use:
     5.1 sudo pip install dbgp
     5.2 sudo pip install vim-debug
     5.3 install-vim-debug.py
+    5.4 install python-rope
+    6. install wmctrl (for fullscreen in gvim)
