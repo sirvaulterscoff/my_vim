@@ -6,3 +6,7 @@ To use:
     3. init submodules git submodule init
     3. Open vim
     4. in vim type :BundleInstall
+    5. to use Python debug follow instructions here jabapyth/vim-debug 
+    5.1 sudo pip install dbgp
+    5.2 sudo pip install vim-debug
+    5.3 install-vim-debug.py

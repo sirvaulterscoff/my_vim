@@ -7,24 +7,39 @@ set backspace=indent,eol,start
 set rtp+=~/.vim/vundle.git
 call vundle#rc()
 Bundle 'ervandew/supertab'	
+"Git integration
 Bundle 'tpope/vim-fugitive'
+"Nice motion using \f
 Bundle 'Lokaltog/vim-easymotion'
+"General library used by other plugins
 Bundle 'L9'
+"Nice plugin for quick opening files/buffers etc    
 Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
+"Snipmate - snippets from textmate
 Bundle 'msanders/snipmate.vim'
+"File tree
 Bundle 'scrooloose/nerdtree'
-Bundle 'corntrace/bufexplorer'
+"Bundle 'corntrace/bufexplorer'
 "Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/TaskList.vim'
 "Bundle 'gotcha/vimpdb'
+"Indexes projects in backgroun
 Bundle 'vim-scripts/indexer.tar.gz'
+"Nice window with tags for current module (methods/variables). Use F4 to
+"toggle
 Bundle 'majutsushi/tagbar'
+"Refactoring/find usages for python
 Bundle 'jperras/ropevim'
+"Automatic syntax checking
 Bundle 'scrooloose/syntastic'
+"Nice theme
 Bundle 'vim-scripts/Solarized'
+"Python debug
+Bundle 'jabapyth/vim-debug'
 filetype plugin indent on
 syntax on
+"highlight all matches
 set hlsearch
 set incsearch 
 
@@ -36,13 +51,15 @@ set ruler
 set showmode  
 set showcmd " show partial commands in status line and
 set showmatch
-"set expandtab
+set expandtab
+set smarttab
 set textwidth=0
 set nowrap
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set autoindent
+"Line numbers
 set number
 set statusline=%<%f\ " Filename
 set statusline+=%w%h%m%r " Options
@@ -56,10 +73,10 @@ let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.git', '\.hg', '\.svn', '\.bzr']
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
+"let g:miniBufExplMapWindowNavVim = 1
+"let g:miniBufExplMapWindowNavArrows = 1
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"let g:miniBufExplModSelTarget = 1 
 let python_highlight_all=1
 "vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 "nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
