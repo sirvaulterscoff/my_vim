@@ -32,13 +32,16 @@ Bundle 'majutsushi/tagbar'
 "Refactoring/find usages for python
 Bundle 'jperras/ropevim'
 "Automatic syntax checking
-Bundle 'scrooloose/syntastic'
+"Bundle 'scrooloose/syntastic'
+"Alternate checker for python
+Bundle 'kevinw/pyflakes-vim.git'
 "Nice theme
 Bundle 'vim-scripts/Solarized'
 "Python debug
 Bundle 'jabapyth/vim-debug'
 "GUndo - undo tree visualizer
 Bundle 'sjl/gundo.vim.git'
+Bundle 'vim-scripts/shell.vim--Odding'
 filetype plugin indent on
 syntax on
 "highlight all matches
@@ -68,7 +71,8 @@ set statusline+=%w%h%m%r " Options
 set statusline+=%{fugitive#statusline()} " Git Hotness
 set statusline+=\ [%{getcwd()}] " current dir
 "set statusline+=%([%{Tlist_Get_Tagname_By_Line()}]%)
-set statusline+=%{SyntasticStatuslineFlag()}
+"Turn on if using syntastic
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
@@ -132,4 +136,4 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap  <F5> :GundoToggle<CR>
 map <leader>r :RopeRename<CR>
-colorscheme desert
+colorscheme grayorange
