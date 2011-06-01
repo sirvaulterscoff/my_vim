@@ -72,6 +72,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+au FileType python set omnifunc=pythoncomplete#Complete
+set completeopt=menuone,longest,preview
 
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.git', '\.hg', '\.svn', '\.bzr']
@@ -129,3 +131,5 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap  <F5> :GundoToggle<CR>
+map <leader>r :RopeRename<CR>
+colorscheme desert
