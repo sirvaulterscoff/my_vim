@@ -17,9 +17,12 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'corntrace/bufexplorer'
 "Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-scripts/TaskList.vim'
-Bundle 'gotcha/vimpdb'
+"Bundle 'gotcha/vimpdb'
 Bundle 'vim-scripts/indexer.tar.gz'
 Bundle 'majutsushi/tagbar'
+Bundle 'jperras/ropevim'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/Solarized'
 filetype plugin indent on
 syntax on
 set hlsearch
@@ -45,7 +48,8 @@ set statusline=%<%f\ " Filename
 set statusline+=%w%h%m%r " Options
 set statusline+=%{fugitive#statusline()} " Git Hotness
 set statusline+=\ [%{getcwd()}] " current dir
-set statusline+=%([%{Tlist_Get_Tagname_By_Line()}]%)
+"set statusline+=%([%{Tlist_Get_Tagname_By_Line()}]%)
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
@@ -56,9 +60,12 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
-
+let python_highlight_all=1
+"vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+"nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 set tags=./tags;/,~/.vimtags
+set nobackup
 
 let g:easytags_cmd = 'ctags'
 
@@ -74,7 +81,12 @@ let g:ctags_statusline=1
 set laststatus=2
 let Tlist_Process_File_Always=1
 set showtabline=2
+let g:ropevim_vim_completion=1
+let g:ropevim_extended_complete=1
+let g:ropevim_autoimport_modules = ["os", "random"]
+let g:ropevim_guess_project=1
 
+let g:syntastic_enable_signs=1
 nmap ,T <Plug>TaskList
 nmap ,c :tabclose<CR>
 nmap ,t :tabnew<CR>
@@ -82,10 +94,13 @@ map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nmap <F3> :FufBuffer<CR>
 nnoremap <silent> <F4> :TagbarOpenAutoClose<CR>
-map <C-A-Right> :tabnext<CR>
-map <C-A-Left>  :tabprev<CR>
-map <C-n> :FufCoverageFile<CR>
-map <C-l> :FufChangeList<CR>
+nmap <C-A-Right> :tabnext<CR>
+noremap <C-A-Left>  :tabprev<CR>
+nmap  <C-n> :FufCoverageFile<CR>
+nmap <C-l> :FufChangeList<CR>
 let g:fuf_keyOpenTabpage='T'
 let g:fuf_keyOpenSplit='S'
 let g:fuf_keyOpenVsplit='V'
+let g:tagbar_compact = 1
+imap <F6> <ESC>:RopeShowDoc<CR>
+"map <C-o> :RopeOpenProject<CR>
