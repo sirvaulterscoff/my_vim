@@ -37,6 +37,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/Solarized'
 "Python debug
 Bundle 'jabapyth/vim-debug'
+"GUndo - undo tree visualizer
+Bundle 'sjl/gundo.vim.git'
 filetype plugin indent on
 syntax on
 "highlight all matches
@@ -121,3 +123,9 @@ let g:fuf_keyOpenVsplit='V'
 let g:tagbar_compact = 1
 imap <F6> <ESC>:RopeShowDoc<CR>
 "map <C-o> :RopeOpenProject<CR>
+
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+nnoremap  <F5> :GundoToggle<CR>
