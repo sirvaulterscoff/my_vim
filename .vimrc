@@ -14,7 +14,7 @@ Bundle 'Lokaltog/vim-easymotion'
 "General library used by other plugins
 Bundle 'L9'
 "Nice plugin for quick opening files/buffers etc    
-Bundle 'FuzzyFinder'
+"Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
 "Snipmate - snippets from textmate
 Bundle 'msanders/snipmate.vim'
@@ -74,11 +74,10 @@ set statusline+=\ [%{getcwd()}] " current dir
 "Turn on if using syntastic
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-au FileType python set omnifunc=pythoncomplete#Complete
-set completeopt=menuone,longest,preview
 
+let g:SuperTabDefaultCompletionType = "context"
+au FileType python set omnifunc=pythoncomplete#Complete
+"set completeopt=menuone,longest,preview
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.git', '\.hg', '\.svn', '\.bzr']
 "let g:miniBufExplMapWindowNavVim = 1
@@ -91,7 +90,7 @@ let python_highlight_all=1
 
 set tags=./tags;/,~/.vimtags
 set nobackup
-
+set noswapfile
 let g:easytags_cmd = 'ctags'
 
 let Tlist_Auto_Highlight_Tag = 1
@@ -119,9 +118,12 @@ map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nmap <F3> :FufBuffer<CR>
 nnoremap <silent> <F4> :TagbarOpenAutoClose<CR>
-nmap <C-A-Right> :tabnext<CR>
-noremap <C-A-Left>  :tabprev<CR>
-nmap  <C-n> :FufCoverageFile<CR>
+"nmap <C-A-Right> :tabnext<CR>
+"noremap <C-A-Left>  :tabprev<CR>
+nmap ,n :tabnext<CR>
+noremap ,p :tabprev<CR>
+nmap  <C-n> :FufCoverageFile<CR>nmap ,n :tabnext<CR>
+noremap ,p :tabprev<CR>
 nmap <C-l> :FufChangeList<CR>
 let g:fuf_keyOpenTabpage='T'
 let g:fuf_keyOpenSplit='S'
@@ -137,3 +139,4 @@ map <c-h> <c-w>h
 nnoremap  <F5> :GundoToggle<CR>
 map <leader>r :RopeRename<CR>
 colorscheme grayorange
+map <C-n> :RopeFindFile<CR>
