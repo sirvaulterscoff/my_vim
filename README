@@ -12,3 +12,4 @@ To use:
     5.3 install-vim-debug.py
     5.4 install python-rope
     6. install wmctrl (for fullscreen in gvim)
+    7. There is a problem with ropevim. You should specify correct path in .vim/bundle/ropevim/plugin/ropevim.vim
