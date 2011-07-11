@@ -117,7 +117,7 @@ nmap ,t :tabnew<CR>
 map <S-F9> :w<CR>:!/usr/bin/env python % <CR>
 map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 nmap <F3> :FufBuffer<CR>
-nnoremap <silent> <F4> :TagbarOpenAutoClose<CR>
+nnoremap <silent> <F4> :TagbarToggle<CR>
 "nmap <C-A-Right> :tabnext<CR>
 "noremap <C-A-Left>  :tabprev<CR>
 nmap ,n :tabnext<CR>
@@ -138,5 +138,9 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 nnoremap  <F5> :GundoToggle<CR>
 map <leader>r :RopeRename<CR>
-colorscheme grayorange
 map <C-n> :RopeFindFile<CR>
+if has("gui_running")
+    colorscheme pyte
+else
+    colorscheme grayorange
+endif
