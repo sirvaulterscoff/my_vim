@@ -42,7 +42,8 @@ Bundle 'vim-scripts/Solarized'
 "GUndo - undo tree visualizer
 "Bundle 'sjl/gundo.vim.git'
 Bundle 'vim-scripts/shell.vim--Odding'
-Bundle 'jabapyth/vim-debug'
+"Bundle 'jabapyth/vim-debug'
+Bundle 'vim-scripts/svndiff'
 filetype plugin indent on
 syntax on
 "highlight all matches
@@ -168,3 +169,5 @@ let g:pymode_utils = 1
 "
 " " Autoremove unused whitespaces
 let g:pymode_utils_whitespaces = 1
+
+let g:svndiff_autoupdate = 1
