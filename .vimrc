@@ -12,7 +12,7 @@ Bundle 'tpope/vim-fugitive'
 "Nice motion using \f
 Bundle 'Lokaltog/vim-easymotion'
 "General library used by other plugins
-Bundle 'L9'
+"Bundle 'L9'
 "Nice plugin for quick opening files/buffers etc    
 "Bundle 'FuzzyFinder'
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -30,18 +30,19 @@ Bundle 'vim-scripts/indexer.tar.gz'
 "toggle
 Bundle 'majutsushi/tagbar'
 "Refactoring/find usages for python
-Bundle 'jperras/ropevim'
+Bundle 'klen/python-mode'
 "Automatic syntax checking
 "Bundle 'scrooloose/syntastic'
 "Alternate checker for python
-Bundle 'kevinw/pyflakes-vim.git'
+"Bundle 'kevinw/pyflakes-vim.git'
 "Nice theme
 Bundle 'vim-scripts/Solarized'
 "Python debug
-Bundle 'jabapyth/vim-debug'
+"Bundle 'jabapyth/vim-debug'
 "GUndo - undo tree visualizer
-Bundle 'sjl/gundo.vim.git'
+"Bundle 'sjl/gundo.vim.git'
 Bundle 'vim-scripts/shell.vim--Odding'
+Bundle 'jabapyth/vim-debug'
 filetype plugin indent on
 syntax on
 "highlight all matches
@@ -74,6 +75,8 @@ set statusline+=\ [%{getcwd()}] " current dir
 "Turn on if using syntastic
 "set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=%-14.(%l,%c%V%)\ %p%% " Right aligned file nav info
+
+set guioptions-=T
 
 let g:SuperTabDefaultCompletionType = "context"
 au FileType python set omnifunc=pythoncomplete#Complete
@@ -139,8 +142,29 @@ map <c-h> <c-w>h
 nnoremap  <F5> :GundoToggle<CR>
 map <leader>r :RopeRename<CR>
 map <C-n> :RopeFindFile<CR>
+
 if has("gui_running")
     colorscheme pyte
 else
     colorscheme grayorange
 endif
+
+
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+let g:pydoc = 'pydoc'
+let g:pymode_rope = 1
+let g:ropevim_codeassist_maxfixes=10
+let g:ropevim_guess_project=1
+let g:ropevim_vim_completion=1
+" Load breakpoints plugin
+let g:pymode_breakpoint = 1
+"
+" " Key for set/unset breakpoint
+let g:pymode_breakpoint_key = '<leader>b'
+"
+" " Load utils plugin
+let g:pymode_utils = 1
+"
+" " Autoremove unused whitespaces
+let g:pymode_utils_whitespaces = 1
