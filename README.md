@@ -3,7 +3,7 @@ My config for vim.
 To use:
     1. cd ~; git clone git@github.com:sirvaulterscoff/my_vim.git .vim_git
     2. make symlinks ln -s .vim_git/.vimrc ~/.vimrc; ln -s .vim_git/.vim ~/.vim
-    3. init submodules git submodule init
+    3. init submodules git submodule init; git submodule update
     3. Open vim
     4. in vim type :BundleInstall
     5. to use Python debug follow instructions here jabapyth/vim-debug 
